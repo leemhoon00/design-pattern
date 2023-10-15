@@ -9,7 +9,7 @@ class Database {
   // 외부에서 싱글턴 인스턴스를 참조할 수 있는 정적 메서드
   // 이 싱글턴 인스턴스를 사용하는 곳들은 모두 같은 인스턴스를 사용하게 됨
   public static getDatabase(): Database {
-    if (Database.database === null) {
+    if (!Database.database) {
       Database.database = new Database();
     }
     return Database.database;
